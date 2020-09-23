@@ -1,3 +1,23 @@
+项目里有Dockerfile，会Docker的话直接就部署了
+
+不会Docker的话手动部署:
+
+安装新版本的Node.js https://nodejs.org/zh-cn/
+拉取代码 git clone https://github.com/zyfworks/steam-key.git
+进入目录后执行npm install安装依赖
+复制一份serverconfig.example.json为serverconfig.json
+运行 npm start
+
+
+
+docker 编译方法如下：
+
+cd steam-key
+docker build -t stkey . (后面要有点)
+docker run -d -p 80:3999 --name stkey (前面为外网访问端口，后面为 stkey 的内部端口。3999 不能改)
+
+
+
 # Steam云激活
 
 还在嫌手动激活俄区Key太麻烦了吗？本项目也许能解决你的烦恼：这是一个实现Steam远程激活功能的**开源**项目，将其部署至俄罗斯的服务器上，再通过浏览器访问相应网页便可远程激活俄区Key。同理，将其部署至国内服务器，访问相应的网页便可在国外激活锁国区的Key。
